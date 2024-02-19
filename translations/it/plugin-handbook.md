@@ -433,21 +433,20 @@ const MyVisitor = {
 };
 ```
 
-If necessary, you can also apply the same function for multiple visitor nodes by separating them with a `|` in the method name as a string like `Identifier|MemberExpression`.
+Se necessario, puoi utilizzare la stessa funzione per visitatore molteplici nodi separandoli con un `|` nel nome del metodo, ottenendo una stringa come `Identifier|MemberExpression`.
 
-Example usage in the [flow-comments](https://github.com/babel/babel/blob/2b6ff53459d97218b0cf16f8a51c14a165db1fd2/packages/babel-plugin-transform-flow-comments/src/index.js#L47) plugin
+troviamo un esempio nel plugin [flow-comments](https://github.com/babel/babel/blob/2b6ff53459d97218b0cf16f8a51c14a165db1fd2/packages/babel-plugin-transform-flow-comments/src/index.js#L47)
 
 ```js
 const MyVisitor = {
   "ExportNamedDeclaration|Flow"(path) {}
 };
 ```
+Puoi utilizzare anche degli alias come visitatori di nodi (come è definito in [babel-types](https://github.com/babel/babel/tree/master/packages/babel-types/src/definitions)).
 
-You can also use aliases as visitor nodes (as defined in [babel-types](https://github.com/babel/babel/tree/master/packages/babel-types/src/definitions)).
+Per esempio,
 
-For example,
-
-`Function` is an alias for `FunctionDeclaration`, `FunctionExpression`, `ArrowFunctionExpression`, `ObjectMethod` and `ClassMethod`.
+`Function` è un alias per `FunctionDeclaration`, `FunctionExpression`, `ArrowFunctionExpression`, `ObjectMethod` e `ClassMethod`.
 
 ```js
 const MyVisitor = {
