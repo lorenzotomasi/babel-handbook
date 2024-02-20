@@ -285,11 +285,11 @@ La fase di [trasformazione](https://en.wikipedia.org/wiki/Program_transformation
 
 The [code generation](https://en.wikipedia.org/wiki/Code_generation_(compiler)) stage takes the final AST and turns it back into a string of code, also creating [source maps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/).
 
-Code generation is pretty simple: you traverse through the AST depth-first, building a string that represents the transformed code.
+La generazione del codice è molto semplice: attraversi l'AST depth-first, creando una string ache rappresenta il codice trasformato.
 
 ## <a id="toc-traversal"></a>Navigazione (traverse)
 
-When you want to transform an AST you have to [traverse the tree](https://en.wikipedia.org/wiki/Tree_traversal) recursively.
+Quando vuoi trasformare un AST deve [attraversare l'albero](https://en.wikipedia.org/wiki/Tree_traversal) in modo ricorsivo.
 
 Per esempio prendiamo un nodo di tipo `FunctionDeclaration`. Ha diverse proprietà: `id`, `params` e `body`. Ognuno di essi ha uno o più nodi nidificati.
 
